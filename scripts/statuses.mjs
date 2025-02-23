@@ -1,5 +1,5 @@
-import {importItemTemplate, importActorTemplate} from "/systems/custom-system-builder/module/exports.js"
-import { templates } from "./exports.mjs";
+//import {importItemTemplate, importActorTemplate} from "/systems/custom-system-builder/module/exports.js"
+//import { templates } from "./exports.mjs";
 
 let templateCache = {};
 let actorCache = {};
@@ -121,12 +121,12 @@ class DawnStatuses {
         }
     }
 
-    static restoreTemplates() {
-        if (game.user.isGM) {
-            importActorTemplate(templates.actors);
-            importItemTemplate(templates.items);
-        }
-    }
+    // static restoreTemplates() {
+    //     if (game.user.isGM) {
+    //         importActorTemplate(templates.actors);
+    //         importItemTemplate(templates.items);
+    //     }
+    // }
 
     static ensureTension() {
         // I'm not actually sure how to do this.
@@ -185,9 +185,9 @@ class DawnStatuses {
     }
 }
 Hooks.once("ready", DawnStatuses.init);
-Hooks.once('customSystemBuilderInit', _ => {
-    // Restore templates on first load
-    if (game.actors.filter(t => t.type === "_template").length === 0) {
-        DawnStatuses.restoreTemplates();
-    }
-});
+// Hooks.once('customSystemBuilderInit', _ => {
+//     // Restore templates on first load
+//     if (game.actors.filter(t => t.type === "_template").length === 0) {
+//         DawnStatuses.restoreTemplates();
+//     }
+// });
