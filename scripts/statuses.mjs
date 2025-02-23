@@ -1,5 +1,15 @@
+import {importItemTemplate, importActorTemplate} from "/systems/custom-system-builder/module/exports.js"
+import { templates } from "./exports.mjs";
+
+let templateCache = {};
+let actorCache = {};
+
 class DawnStatuses {
     static init() {
+        game.modules.get("dawn-statuses").api = {
+            restoreTemplates: restoreTemplates,
+        };
+
         CONFIG.statusEffects = [
             // Generic
             {
@@ -102,6 +112,82 @@ class DawnStatuses {
                 "img": "icons/svg/downgrade.svg"
             }
         ];
+
+        if (game.user.isGM) {
+            Hooks.on("combatStart", DawnStatuses.combatStart);
+            Hooks.on("combatRound", DawnStatuses.combatRound);
+            Hooks.on("updateCombatant", DawnStatuses.updateCombatant);
+            Hooks.on("deleteCombatant", DawnStatuses.deleteCombatant);
+        }
+    }
+
+    static restoreTemplates() {
+        if (game.user.isGM) {
+            importActorTemplate(templates.actors);
+            importItemTemplate(templates.items);
+        }
+    }
+
+    static ensureTension() {
+        // I'm not actually sure how to do this.
+    }
+
+    static combatStart(combat, updateData) {
+        DawnStatuses.ensureTension();
+        pr.api.set("tension", 0);
+    }
+
+    static combatRound(combat, updateData, updateOptions) {
+        DawnStatuses.ensureTension();
+        // direction is 1 for going to a new round, and -1 for going to the previous round.
+        pr.api.increment(updateOptions.direction);
+    }
+
+    // A PC is not generally going to be able to increment tension.
+    // They may, however, delete their token when taken out.
+    // Alternatively, the GM may mark them as defeated.
+    // So long as one of these things happen we should increment tension.
+    // If BOTH happen, we need to increment tension only once.
+    // Unlike PCs, NPCs are all controlled by the GM, so we can do that directly
+
+    static combatantIsPC(combatant) {
+        if (actorCache.hasOwnProperty(combatant.actorId)) {
+            return actorCache[combatant.actorId];
+        }
+
+        // Repeatedly querying the actor database is probably not fast. Cache the result.
+        let actor = game.actors.get(combatant.actorId);
+        let templateId = actor.system.template;
+
+        if (templateCache.hasOwnProperty(templateId)) {
+            actorCache[combatant.actorId] = templateCache[templateId];
+        } else {
+            let template = game.actors.get(templateId);
+            templateCache[templateId] = template.name === "PC Template"
+            actorCache[combatant.actorId] = templateCache[templateId];
+        }
+
+        return actorCache[combatant.actorId];
+    }
+
+    static updateCombatant(combatant, change) {
+        if (!DawnStatuses.combatantIsPC(combatant)) { return; }
+        // This hook gets called A LOT, so we have to filter
+        if (change.hasOwnProperty("defeated") && change.defeated === true) {
+            pr.api.increment("tension");
+        }
+    }
+
+    static deleteCombatant(combatant) {
+        if (!DawnStatuses.combatantIsPC(combatant)) { return; }
+        if (combatant.defeated) { return }
+        pr.api.increment("tension")
     }
 }
 Hooks.once("ready", DawnStatuses.init);
+Hooks.once('customSystemBuilderInit', _ => {
+    // Restore templates on first load
+    if (game.actors.filter(t => t.type === "_template").length === 0) {
+        DawnStatuses.restoreTemplates();
+    }
+});

@@ -2,14 +2,32 @@
     "id": "dawn-statuses",
     "title": "Dawn Statueses - Streamlined Active Effects",
     "description": "Streamline the statuses in the quick active effects menu to those used by the DAWN system developed by Joel Happy Hill.",
-    "version": "0.1",
+    "version": "0.2",
     "compatibility": {
         "minimum": "12",
-        "verified": "12"
+        "verified": "12.331"
     },
     "esmodules": [
         "scripts/statuses.mjs"
     ],
-    "manifest": "https://raw.githubusercontent.com/ev-ev-ev/dawn-statuses/main/module.json",
-    "download": "https://github.com/ev-ev-ev/dawn-statuses/releases/download/latest/dawn-statuses.zip"
+    "relationships": {
+        "systems": [{
+            "id": "custom-system-builder",
+            "type": "system",
+            "compatibility": {
+                "minimum": "4.3.2",
+                "verified": "4.3.2"
+            }
+        }],
+        "modules": [{
+            "id": "fvtt-party-resources",
+            "type": "module",
+            "compatibility": {
+                "minimum": "1.7.0",
+                "verified": "1.7.0"
+            }
+        }]
+    },
+    "manifest": "https://raw.githubusercontent.com/ev-ev-ev/dawn-statuses/test/module.json",
+    "download": "https://github.com/ev-ev-ev/dawn-statuses/releases/download/test/dawn-statuses.zip"
 }
