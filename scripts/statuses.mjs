@@ -106,7 +106,8 @@ class DawnStatuses {
             }
         ];
 
-        if (game.user.isGM) {
+        // Automatic tension using party resources
+        if (game.user.isGM && window.pr && window.pr.api.resources().resources.find(t => t.id === "tension")) {
             Hooks.on("combatStart", DawnStatuses.combatStart);
             Hooks.on("combatRound", DawnStatuses.combatRound);
             Hooks.on("updateCombatant", DawnStatuses.updateCombatant);

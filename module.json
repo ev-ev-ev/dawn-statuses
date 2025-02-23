@@ -2,7 +2,7 @@
     "id": "dawn-statuses",
     "title": "Dawn Statueses - Streamlined Active Effects",
     "description": "Streamline the statuses in the quick active effects menu to those used by the DAWN system developed by Joel Happy Hill.",
-    "version": "0.2",
+    "version": "0.3",
     "compatibility": {
         "minimum": "12",
         "verified": "12.331"
