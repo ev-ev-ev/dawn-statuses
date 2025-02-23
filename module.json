@@ -9,5 +9,7 @@
     },
     "esmodules": [
         "scripts/statuses.mjs"
-    ]
+    ],
+    "manifest": "https://raw.githubusercontent.com/ev-ev-ev/dawn-statuses/main/module.json",
+    "download": "https://github.com/ev-ev-ev/dawn-statuses/releases/download/latest/dawn-statuses.zip"
 }
