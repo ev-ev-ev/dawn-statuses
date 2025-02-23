@@ -28,6 +28,6 @@
             }
         }]
     },
-    "manifest": "https://raw.githubusercontent.com/ev-ev-ev/dawn-statuses/test/module.json",
-    "download": "https://github.com/ev-ev-ev/dawn-statuses/releases/download/test/dawn-statuses.zip"
+    "manifest": "https://raw.githubusercontent.com/ev-ev-ev/dawn-statuses/latest/module.json",
+    "download": "https://github.com/ev-ev-ev/dawn-statuses/releases/download/latest/dawn-statuses.zip"
 }

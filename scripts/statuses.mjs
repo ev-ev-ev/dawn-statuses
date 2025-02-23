@@ -1,15 +1,8 @@
-//import {importItemTemplate, importActorTemplate} from "/systems/custom-system-builder/module/exports.js"
-//import { templates } from "./exports.mjs";
-
 let templateCache = {};
 let actorCache = {};
 
 class DawnStatuses {
     static init() {
-        game.modules.get("dawn-statuses").api = {
-            restoreTemplates: restoreTemplates,
-        };
-
         CONFIG.statusEffects = [
             // Generic
             {
@@ -121,13 +114,6 @@ class DawnStatuses {
         }
     }
 
-    // static restoreTemplates() {
-    //     if (game.user.isGM) {
-    //         importActorTemplate(templates.actors);
-    //         importItemTemplate(templates.items);
-    //     }
-    // }
-
     static ensureTension() {
         // I'm not actually sure how to do this.
     }
@@ -140,7 +126,7 @@ class DawnStatuses {
     static combatRound(combat, updateData, updateOptions) {
         DawnStatuses.ensureTension();
         // direction is 1 for going to a new round, and -1 for going to the previous round.
-        pr.api.increment(updateOptions.direction);
+        pr.api.increment("tension", updateOptions.direction);
     }
 
     // A PC is not generally going to be able to increment tension.
@@ -185,9 +171,3 @@ class DawnStatuses {
     }
 }
 Hooks.once("ready", DawnStatuses.init);
-// Hooks.once('customSystemBuilderInit', _ => {
-//     // Restore templates on first load
-//     if (game.actors.filter(t => t.type === "_template").length === 0) {
-//         DawnStatuses.restoreTemplates();
-//     }
-// });
