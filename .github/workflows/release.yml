@@ -1,0 +1,28 @@
+name: Create release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release pushed tag
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          cat <<< $(jq ".version=\"${tag#v}\"" module.json) > ./module.json
+          zip -r ./dawn-statuses.zip module.json scripts/
+          cat ./module.json
+          ls -al
+          gh --version
+          gh release create "$tag" module.json "./dawn-statuses.zip" --repo="$GITHUB_REPOSITORY" --title="${tag#v}" --generate-notes --latest
