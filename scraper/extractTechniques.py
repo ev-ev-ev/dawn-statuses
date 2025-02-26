@@ -25,7 +25,7 @@ def extract(sourcebook, archetype, startpage, endpage):
 
     for line in techniques.splitlines():
         # Are we in a new tech?
-        m = re.search(r"^###### ([a-zA-Z ]+) [|] (.+) [|] (.*)$", line)
+        m = re.search(r"^###### (.+) [|] (.+) [|] (.*)$", line)
         if m and current['tech'] != '':
             # Print the previous tech and start a new one
             output.append(current)
