@@ -1,6 +1,6 @@
 import { templates } from "./templates/templates.mjs";
 
-async function restore(things, type, database) {
+async function restore(things, type, database, folder) {
     let thingsInDatabase = {};
 
     for(let thing of database) {
@@ -19,13 +19,20 @@ async function restore(things, type, database) {
             thingInDatabase = await type.create(thing);
         }
 
-        await thingInDatabase.update({system: thingSystem});
+        await thingInDatabase.update({folder: folder.id, system: thingSystem});
     }
 }
 
+async function folder(name, type) {
+    var folder;
+    folder = game.folders.contents.find(f => f.name == name && f.type == type);
+    if (!folder) { folder = await Folder.create({name: name, type: type}); }
+    return folder;
+}
+
 async function restoreTemplates() {
-    await restore(templates.items, Item, game.items);
-    await restore(templates.actors, Actor, game.actors);
+    await restore(templates.items, Item, game.items, await folder("Templates", "Item"));
+    await restore(templates.actors, Actor, game.actors, await folder("Templates", "Actor"));
 }
 
 export async function setUpRestore() {
