@@ -1,8 +1,10 @@
+import { setUpRestore } from "./import.mjs";
 let templateCache = {};
 let actorCache = {};
 
 class DawnStatuses {
     static init() {
+        setUpRestore();
         CONFIG.statusEffects = [
             // Generic
             {
@@ -107,7 +109,7 @@ class DawnStatuses {
         ];
 
         // Automatic tension using party resources
-        if (game.user.isGM && window.pr && window.pr.api.resources().resources.find(t => t.id === "tension")) {
+        if (game.user.isGM) {
             Hooks.on("combatStart", DawnStatuses.combatStart);
             Hooks.on("combatRound", DawnStatuses.combatRound);
             Hooks.on("updateCombatant", DawnStatuses.updateCombatant);
@@ -136,6 +138,8 @@ class DawnStatuses {
     // So long as one of these things happen we should increment tension.
     // If BOTH happen, we need to increment tension only once.
     // Unlike PCs, NPCs are all controlled by the GM, so we can do that directly
+
+    // TODO: GMs seem to like manually toggling NPC traits, or deleting them when killed.
 
     static combatantIsPC(combatant) {
         if (actorCache.hasOwnProperty(combatant.actorId)) {

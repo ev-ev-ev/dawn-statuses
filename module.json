@@ -1,8 +1,14 @@
 {
     "id": "dawn-statuses",
-    "title": "Dawn Statueses - Streamlined Active Effects",
-    "description": "Streamline the statuses in the quick active effects menu to those used by the DAWN system developed by Joel Happy Hill.",
+    "title": "Unofficial DAWN System",
+    "description": "Using Custom System Builder, this module implements the DAWN system developed by Joel Happy Hill.",
     "version": "latest",
+    "authors": [
+        {
+            "name": "ev-ev-ev",
+            "discord": "ev.eevee.ev"
+        }
+    ],
     "compatibility": {
         "minimum": "12",
         "verified": "12.331"
@@ -11,22 +17,33 @@
         "scripts/statuses.mjs"
     ],
     "relationships": {
-        "systems": [{
-            "id": "custom-system-builder",
-            "type": "system",
-            "compatibility": {
-                "minimum": "4.3.2",
-                "verified": "4.3.2"
+        "requires": [
+            {
+                "id": "custom-system-builder",
+                "type": "system",
+                "compatibility": {
+                    "minimum": "4.3.2",
+                    "verified": "4.3.2"
+                }
+            },
+            {
+                "id": "fvtt-party-resources",
+                "type": "module",
+                "compatibility": {
+                    "minimum": "1.7.0",
+                    "verified": "1.7.0"
+                }
+            },
+            {
+                "id": "_chatcommands",
+                "type": "module",
+                "manifest": "https://gitlab.com/woodentavern/foundryvtt-chat-command-lib/-/raw/master/src/module.json",
+                "compatibility": {
+                    "minimum": "2.0.1",
+                    "verified": "2.0.1"
+                }
             }
-        }],
-        "modules": [{
-            "id": "fvtt-party-resources",
-            "type": "module",
-            "compatibility": {
-                "minimum": "1.7.0",
-                "verified": "1.7.0"
-            }
-        }]
+        ]
     },
     "manifest": "https://github.com/ev-ev-ev/dawn-statuses/releases/latest/download/module.json",
     "download": "https://github.com/ev-ev-ev/dawn-statuses/releases/latest/download/dawn-statuses.zip"
