@@ -2,6 +2,7 @@ import { templates } from "./templates/templates.mjs";
 import { techniques } from "./techniques/techniques.mjs";
 import { components } from "./npcs/components.mjs";
 import { edges } from "./npcs/edges.mjs";
+import { npcTechniques } from "./npcs/techniques.mjs"
 
 async function restoreTemplates(things, type, database, folder) {
     let thingsInDatabase = {};
@@ -40,6 +41,7 @@ async function restore() {
     await restoreTechniques();
     await restoreComponents();
     await restoreEdges();
+    await restoreNPCTechniques();
 }
 
 async function restoreTechniques() {
@@ -152,6 +154,7 @@ async function restoreComponents() {
                 "Base_Health": componentData.basehp,
                 "Health_Per_Tier": componentData.tierhp,
                 "Speed": componentData.speed,
+                "Armor_Per_Tier": componentData.tierarmor,
                 "Passive_Exists": componentData.passive != '',
                 "Passive_Description": componentData.passive,
                 "Attack_Exists": componentData.attackname != '',
@@ -170,6 +173,103 @@ async function restoreComponents() {
             },
             "folder": folders[componentData.archetype].id
         });
+    }
+}
+
+async function restoreNPCTechniques() {
+    // Some of these are actually NPC Components, some are techniques
+    let componentFolder = await folder("NPC Components", "Item");
+    let folders = {
+        Technique: await folder("NPC Techniques", "Item", componentFolder.id),
+        Scene: await folder("Scene Modifiers", "Item", componentFolder.id)
+    };
+    let sceneTemplate = game.items.getName("{NPC Component}");
+    let techniqueTemplate = game.items.getName("{NPC Technique}");
+
+    for (let componentData of npcTechniques) {
+        // {
+        //     "name": "Artillery",
+        //     "archetype": "Scene",
+        //     "flavor": "Creates delayed flat damage zones randomly.",
+        //     "basehp": "13",
+        //     "tierhp": "5",
+        //     "speed": "0",
+        //     "baseevasion": "0",
+        //     "tierevasion": "0",
+        //     "basearmor": "0",
+        //     "tierarmor": "0",
+        //     "passive": "After this Deploys, they choose one of the following shapes: two \u221e length Lines so long as they have no adjacent spaces, a 3x3 Zone, a 2x5 Zone, all the spaces on the board's edges. After this Deploys it may indicate its chosen shape anywhere on the board. At the end of each Round this deals [Tension] damage to all Opponents within the indicated space. It then chooses a new area to indicate with this NPC\u2019s passive.\n\n",
+        //     "actionname": "",
+        //     "action": "",
+        //     "attackname": "",
+        //     "attack": "",
+        //     "attackdice": "",
+        //     "attacktierdice": "1",
+        //     "attacktensionx": "1",
+        //     "acename": "",
+        //     "acetension": "",
+        //     "ace": ""
+        //   },
+        let name = componentData.name;
+        var component = game.items.getName(name);
+        if (!component) { component = await Item.create({name: name, type:"equippableItem"}); }
+        if (componentData.archetype == "Scene") {
+            await component.update({
+                "system": sceneTemplate.system,
+                "system.template": sceneTemplate.id,
+                "system.props": {
+                    "Base_Health": componentData.basehp,
+                    "Health_Per_Tier": componentData.tierhp,
+                    "Speed": componentData.speed,
+                    "Armor_Per_Tier": componentData.tierarmor,
+                    "Passive_Exists": componentData.passive != '',
+                    "Passive_Description": componentData.passive,
+                    "Attack_Exists": componentData.attackname != '',
+                    "Attack_Name": componentData.attackname,
+                    "Attack_Description": componentData.attack,
+                    "Attack_Dice": componentData.attackdice,
+                    "Attack_Tier_Dice": componentData.attacktierdice,
+                    "Attack_Tension_Multiplier": componentData.attacktensionx,
+                    "Action_Exists": componentData.actionname != '',
+                    "Action_Name": componentData.actionname,
+                    "Action_Description": componentData.action,
+                    "Ace_Exists": componentData.acename != '',
+                    "Ace_Name": componentData.acename,
+                    "Ace_Description": componentData.ace,
+                    "Ace_Tension_Min": componentData.acetension
+                },
+                "folder": folders[componentData.archetype].id
+            });
+        } else if (componentData.archetype == "Technique") {
+            await component.update({
+                "system": techniqueTemplate.system,
+                "system.template": techniqueTemplate.id,
+                "system.props": {
+                    "Speed": componentData.speed,
+                    "Passive_Exists": componentData.passive != '',
+                    "Passive_Description": componentData.passive,
+                    "Armor": componentData.basearmor,
+                    "Tier_Armor": componentData.tierarmor,
+                    "Evasion": componentData.baseevasion,
+                    "Tier_Evasion": componentData.tierevasion,
+                    "Attack_Exists": componentData.attackname != '',
+                    "Attack_Name": componentData.attackname,
+                    "Attack_Description": componentData.attack,
+                    "Attack_Dice": componentData.attackdice,
+                    "Attack_Tier_Dice": componentData.attacktierdice,
+                    "Attack_Tension_Multiplier": componentData.attacktensionx,
+                    "Action_Exists": componentData.actionname != '',
+                    "Action_Name": componentData.actionname,
+                    "Action_Description": componentData.action,
+                    // None of the book techniques have aces but... i guess they could?
+                    "Ace_Exists": componentData.acename != '',
+                    "Ace_Name": componentData.acename,
+                    "Ace_Description": componentData.ace,
+                    "Ace_Tension_Min": componentData.acetension
+                },
+                "folder": folders[componentData.archetype].id
+            });
+        }
     }
 }
 
