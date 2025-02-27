@@ -1637,7 +1637,17 @@
     "flavor": "\u201cRunic alignment complete. Aether levels nominal. Wegot this partner. For Oberooooon!\u201d",
     "level": "2",
     "name": "Autonomous",
-    "text": "The Suit is now a Summoned non- Modifier NPC of your choice with a Tier equal to yours, so long as you don\u2019t have it on. It is still 2x2 in size and counts as Terrain while it\u2019s not taking a Turn, (change its health to match the summon\u2019s health, removing the 15 terrain health). While your Summon takes its Turn, you may Skirmish a character adjacent to it (regardless of range) in place of one of its Attacks. **3: Perfect Sync: You may Interact with the Suit** after Deployment at no Cost. Even while you are in the Suit, it may still take Turns as a Summon, sharing your space and moving you when it moves. While you are in the Suit, the Summon is Dazed."
+    "text": "The Suit is now a Summoned non- Modifier NPC of your choice with a Tier equal to yours, so long as you don\u2019t have it on. It is still 2x2 in size and counts as Terrain while it\u2019s not taking a Turn, (change its health to match the summon\u2019s health, removing the 15 terrain health). While your Summon takes its Turn, you may Skirmish a character adjacent to it (regardless of range) in place of one of its Attacks."
+  },
+  {
+    "tech": "Mecha Pilot",
+    "archetype": "Bulwark",
+    "tags": "Tanking, Versatile",
+    "stars": "\u2605 \u2605 \u2605",
+    "flavor": "\u201cRunic alignment complete. Aether levels nominal. Wegot this partner. For Oberooooon!\u201d",
+    "level": "3",
+    "name": "Perfect Sync",
+    "text": "You may Interact with the Suit after Deployment at no Cost. Even while you are in the Suit, it may still take Turns as a Summon, sharing your space and moving you when it moves. While you are in the Suit, the Summon is Dazed."
   },
   {
     "tech": "Analyst",
