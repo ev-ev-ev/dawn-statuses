@@ -1,4 +1,5 @@
 import { setUpRestore } from "./import.mjs";
+import { roll } from "./roll.mjs";
 let templateCache = {};
 let actorCache = {};
 
@@ -115,6 +116,10 @@ class DawnStatuses {
             Hooks.on("updateCombatant", DawnStatuses.updateCombatant);
             Hooks.on("deleteCombatant", DawnStatuses.deleteCombatant);
         }
+
+        window.dawn = {
+            roll: roll
+        };
     }
 
     static ensureTension() {
