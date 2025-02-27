@@ -21,7 +21,8 @@ async function rollImpl(tag, dice, advantage, crittingOn, tension, tensionx, bon
 
     let crits = r.dice[0].results.filter(die => die.exploded).length
     let successes = r.dice[0].results.filter(die => die.success).length
-    if(successes == 0) { totalBonus = 0; } // miss
+    // YOU CAN'T MISS?!
+    let result = Math.max(0, successes + totalBonus) // Weakened produces negative bonus
 
     return `
         <table>
@@ -33,22 +34,14 @@ async function rollImpl(tag, dice, advantage, crittingOn, tension, tensionx, bon
             ${explain("Bonus", bonus)}
             ${explain("Crits", crits)}
             ${explain("Hits", r.toAnchor().outerHTML, EXPLAIN_ANYWAY)}
-            ${explain("Result", successes + totalBonus, EXPLAIN_ANYWAY)}
+            ${explain("Result", result, EXPLAIN_ANYWAY)}
         </table>
-        ${miss(successes)}
     `;
 }
 
 function explain(tag, value, explainAnyway = false) {
     if (explainAnyway || value !== 0) {
         return `<tr><td><strong>${tag}</strong></td><td><strong>${value}</strong></td></tr>`;
-    }
-    return "";
-}
-
-function miss(successes) {
-    if (successes == 0) {
-        return "<div class='dice-roll'><div class='dice-result'><h4 class='dice-total'>MISS</h4></div></div>"
     }
     return "";
 }
