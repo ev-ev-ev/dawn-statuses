@@ -88,7 +88,10 @@ async function restoreTechniques() {
             "system.template": template.id,
             "system.props": {
                 "Archetype": techniqueData.archetype,
-                "Description": `<strong>${techniqueData.name}</strong>: ${techniqueData.text}`
+                "Description": `<strong>${techniqueData.name}</strong>: ${techniqueData.text}`,
+                "Flavor": `<i>${techniqueData.flavor}</i>`,
+                "Complexity": techniqueData.stars,
+                "Tags": techniqueData.tags
             },
             "folder": folders[techniqueData.archetype].id
         });

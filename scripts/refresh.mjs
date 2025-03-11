@@ -33,13 +33,27 @@ async function findItem(itemName, templateID, outerCache) {
     return cache[itemName];
 }
 
+export async function refreshCurrentScene() {
+    // I think there are circumstances where no scene can be loaded.
+    // I'm not 100% sure if the canvas is still there and I'm not testing it.
+    if (!game.canvas || !game.canvas.scene) { return; }
+
+    let actors = game.canvas.scene.tokens.map(t => t.actor);
+
+    await refreshActors(actors);
+}
+
 export async function refresh() {
+    await refreshActors(game.actors);
+}
+
+async function refreshActors(actors) {
     // TODO: Loop over Actors, refresh from template
     // TODO: Loop over an Actor's embedded items, refresh from template SANS tier
     let templates = {}; // Cache
     let items = {}; // Cache
 
-    for (let actor of game.actors) {
+    for (let actor of actors) {
         let template = await findTemplate(actor.system.template, templates);
         // This isn't something we recognize, so don't touch it
         if (template === NOTHING) { continue; }
@@ -65,5 +79,13 @@ export async function setUpRefresh () {
         "description": "Refresh all sheets from templates, even techniques already in use. NOTE: if you have edited anything OTHER than Tier, those changes will be overwritten. Also doesn't recover items from tokens embedded in scens.",
         "requiredRole": "GAMEMASTER",
         "callback": refresh
+    });
+
+    game.chatCommands.register({
+        "name": "/refreshScene",
+        "module": "dawn-statuses",
+        "description": "Refresh all sheets in scnee from templates, even techniques already in use. NOTE: if you have edited anything OTHER than Tier, those changes will be overwritten. Also doesn't recover items from tokens embedded in scens.",
+        "requiredRole": "GAMEMASTER",
+        "callback": refreshCurrentScene
     });
 }
