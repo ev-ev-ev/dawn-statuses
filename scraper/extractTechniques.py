@@ -45,7 +45,7 @@ def extract(sourcebook, archetype, startpage, endpage):
             current['flavor'] = current['flavor'] + m.group(1)
             continue
 
-        m = re.search(r"^\*\*(\d): ([^:]+): (.*)\*\*(.*)$", line)
+        m = re.search(r"^\*\*(\d):? ([^:]+): (.*)\*\*(.*)$", line)
         if m and current['name'] != '':
             output.append(dict(current))
         

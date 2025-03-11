@@ -3,6 +3,7 @@ import { techniques } from "./techniques/techniques.mjs";
 import { components } from "./npcs/components.mjs";
 import { edges } from "./npcs/edges.mjs";
 import { npcTechniques } from "./npcs/techniques.mjs"
+import { refresh } from "./refresh.mjs";
 
 async function restoreTemplates(things, type, database, folder) {
     let thingsInDatabase = {};
@@ -27,11 +28,21 @@ async function restoreTemplates(things, type, database, folder) {
     }
 }
 
-async function folder(name, type, parentFolderId="") {
+async function folder(name, type, parentFolderId=null) {
     var folder;
-    folder = game.folders.contents.find(f => f.name == name && f.type == type);
+    folder = game.folders.contents.find(f => f.name == name && f.type == type && (f.folder == parentFolderId || (f.folder && f.folder.id == parentFolderId)));
     if (!folder) { folder = await Folder.create({name: name, type: type}); }
-    if (folder.folder != parentFolderId) { await folder.update({folder: parentFolderId})}
+
+    var foundParentFolderId;
+    if (folder.folder == null) {
+        foundParentFolderId = null;
+    } else {
+        foundParentFolderId = folder.folder.id;
+    }
+
+    if (foundParentFolderId != parentFolderId || (folder.folder && folder.folder.id != parentFolderId)){
+        await folder.update({folder: parentFolderId})
+    }
     return folder;
 }
 
@@ -42,6 +53,7 @@ async function restore() {
     await restoreComponents();
     await restoreEdges();
     await restoreNPCTechniques();
+    await refresh();
 }
 
 async function restoreTechniques() {
@@ -71,6 +83,7 @@ async function restoreTechniques() {
         var technique = game.items.getName(name);
         if (!technique) { technique = await Item.create({name: name, type:"equippableItem"}); }
         await technique.update({
+            "ownership.default": CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,
             "system": template.system,
             "system.template": template.id,
             "system.props": {
@@ -148,6 +161,7 @@ async function restoreComponents() {
         var component = game.items.getName(name);
         if (!component) { component = await Item.create({name: name, type:"equippableItem"}); }
         await component.update({
+            "ownership.default": CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,
             "system": template.system,
             "system.template": template.id,
             "system.props": {
@@ -215,6 +229,7 @@ async function restoreNPCTechniques() {
         if (!component) { component = await Item.create({name: name, type:"equippableItem"}); }
         if (componentData.archetype == "Scene") {
             await component.update({
+                "ownership.default": CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,
                 "system": sceneTemplate.system,
                 "system.template": sceneTemplate.id,
                 "system.props": {
@@ -242,6 +257,7 @@ async function restoreNPCTechniques() {
             });
         } else if (componentData.archetype == "Technique") {
             await component.update({
+                "ownership.default": CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,
                 "system": techniqueTemplate.system,
                 "system.template": techniqueTemplate.id,
                 "system.props": {

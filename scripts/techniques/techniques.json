@@ -1287,7 +1287,17 @@
     "flavor": "\u201cMake way for Pantomime\u2019s blazing star!\u201d\u201cThe killer king with the inescapable pin!\u201d\u201cThe one, the only\u2026 Rapha\u00ebl Blas\u00e9!\u201d",
     "level": "2",
     "name": "Spine Breaker",
-    "text": "Your Skirmishes gain 1 Advantage. After you Spike a single Launched character, you may teleport to a space adjacent to your target and change the attack you are using into a Body Finisher at no Cost. **3 Finishing Move [ Body Finisher \u2192 Jump ]: Instead** of moving with this Jump, you and a target of the Finisher Disappear. At the start of the next round or when either of you\u2019re able to take another Action (whatever comes first) you both return to the board in the same spaces, Launching all other enemies in 2 range, and letting you Swiftly Body Finisher the initial target at no cost."
+    "text": "Your Skirmishes gain 1 Advantage. After you Spike a single Launched character, you may teleport to a space adjacent to your target and change the attack you are using into a Body Finisher at no Cost."
+  },
+  {
+    "tech": "Grappler",
+    "archetype": "Bulwark",
+    "tags": "Finishers, Body, Restricting",
+    "stars": "\u2605 \u2605",
+    "flavor": "\u201cMake way for Pantomime\u2019s blazing star!\u201d\u201cThe killer king with the inescapable pin!\u201d\u201cThe one, the only\u2026 Rapha\u00ebl Blas\u00e9!\u201d",
+    "level": "3",
+    "name": "Finishing Move [ Body Finisher \u2192 Jump ]",
+    "text": "Instead of moving with this Jump, you and a target of the Finisher Disappear. At the start of the next round or when either of you\u2019re able to take another Action (whatever comes first) you both return to the board in the same spaces, Launching all other enemies in 2 range, and letting you Swiftly Body Finisher the initial target at no cost."
   },
   {
     "tech": "Mundane",
