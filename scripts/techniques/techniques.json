@@ -995,6 +995,26 @@
     "tags": "Avoidance, Talent, Dodge",
     "stars": "\u2605",
     "flavor": "\u201cAnd what's this! It looks like she can\u2019t be hit! They\u2019removing at speeds I can\u2019t even keep up with! Champlooks like she\u2019s boxing ghosts!\u201d",
+    "level": "1",
+    "name": "Duck",
+    "text": "The first time you Dodge each Round, gain [Talent / 2] additional Evasion."
+  },
+  {
+    "tech": "Untouchable",
+    "archetype": "Vagabond",
+    "tags": "Avoidance, Talent, Dodge",
+    "stars": "\u2605",
+    "flavor": "\u201cAnd what's this! It looks like she can\u2019t be hit! They\u2019removing at speeds I can\u2019t even keep up with! Champlooks like she\u2019s boxing ghosts!\u201d",
+    "level": "2",
+    "name": "Weave",
+    "text": "You can move one additional space when using Dodge. If your Evasion reduces damage to 0, you may move as if you Dodged."
+  },
+  {
+    "tech": "Untouchable",
+    "archetype": "Vagabond",
+    "tags": "Avoidance, Talent, Dodge",
+    "stars": "\u2605",
+    "flavor": "\u201cAnd what's this! It looks like she can\u2019t be hit! They\u2019removing at speeds I can\u2019t even keep up with! Champlooks like she\u2019s boxing ghosts!\u201d",
     "level": "3",
     "name": "Fighter's Instinct [ Dodge \u2192 Skirmish ]",
     "text": "The Skirmish lets you move 3 spaces before targeting and lets you Crit on rolls of 5 or 6."
