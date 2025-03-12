@@ -1,14 +1,16 @@
 import { setUpRestore } from "./import.mjs";
 import { setUpRefresh } from "./refresh.mjs";
+import { setUpSearch } from "./search.mjs";
 import { roll } from "./roll.mjs";
 
 let templateCache = {};
 let actorCache = {};
 
 class DawnStatuses {
-    static init() {
-        setUpRestore();
-        setUpRefresh();
+    static async init() {
+        await setUpRestore();
+        await setUpRefresh();
+        await setUpSearch();
         CONFIG.statusEffects = [
             // Generic
             {
