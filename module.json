@@ -3,6 +3,7 @@
     "title": "Unofficial DAWN System",
     "description": "Using Custom System Builder, this module implements the DAWN system developed by Joel Happy Hill. Used with permission.",
     "version": "latest",
+    "url": "https://github.com/ev-ev-ev/dawn-statuses",
     "authors": [
         {
             "name": "ev-ev-ev",
