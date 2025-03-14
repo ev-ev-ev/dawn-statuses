@@ -1,6 +1,5 @@
 {
   "id": "dawn-statuses",
-  "dry-run": true,
   "release": {
     "version": "latest",
     "manifest": "https://github.com/ev-ev-ev/dawn-statuses/releases/latest/download/module.json",
