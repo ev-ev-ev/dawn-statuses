@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Create release
+      - name: Create Github Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
@@ -23,3 +23,8 @@ jobs:
           ./build.sh
           gh --version
           gh release create "$tag" module.json "./dawn-statuses.zip" --repo="$GITHUB_REPOSITORY" --title="${tag#v}" --generate-notes --latest
+      - name: Push to Foundry
+        env:
+          FOUNDRY_DEPLOY_KEY: ${{ secrets.FOUNDRY_DEPLOY_KEY }}
+        run: |
+          curl --header "Authorization: ${FOUNDRY_DEPLOY_KEY}" --header "Content-Type: application/json" --request POST --data @foundry_data.json https://api.foundryvtt.com/_api/packages/release_version/

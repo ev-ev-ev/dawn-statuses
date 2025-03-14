@@ -1,0 +1,14 @@
+{
+  "id": "dawn-statuses",
+  "dry-run": true,
+  "release": {
+    "version": "latest",
+    "manifest": "https://github.com/ev-ev-ev/dawn-statuses/releases/latest/download/module.json",
+    "notes": "https://github.com/example/example-module/releases/tag/release-1.0.0",
+    "compatibility": {
+      "minimum": "10.312",
+      "verified": "11",
+      "maximum": ""
+    }
+  }
+}
