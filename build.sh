@@ -1,5 +1,6 @@
 #!/bin/bash
 cat <<< $(jq ".version=\"${tag#v}\"" module.json) > ./module.json
+cat <<< $(jq ".download=\"https://github.com/ev-ev-ev/dawn-statuses/releases/download/${tag}/dawn-statuses.zip\"" module.json) > ./module.json
 cat ./scripts/templates/templates.mjs.base ./scripts/templates/templates.json > ./scripts/templates/templates.mjs
 cat ./scripts/techniques/techniques.mjs.base ./scripts/techniques/techniques.json > ./scripts/techniques/techniques.mjs
 cat ./scripts/npcs/edges.mjs.base ./scripts/npcs/edges.json > ./scripts/npcs/edges.mjs
