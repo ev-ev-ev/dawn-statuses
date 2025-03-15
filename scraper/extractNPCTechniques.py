@@ -77,7 +77,7 @@ def extract(sourcebook, startpage, endpage):
             current['flavor'] = m.group(2)
             continue
 
-        if line.startswith("Technique NPC."):
+        if line.startswith("NPC Modifier."):
             current['archetype'] = "Technique"
             continue
 

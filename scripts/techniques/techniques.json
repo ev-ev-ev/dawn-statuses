@@ -217,7 +217,7 @@
     "flavor": "\u201cA hundred pellets at 1600 feet per second hurts aboutas much as you would expect.\u201d",
     "level": "1",
     "name": "Buck Shot",
-    "text": "Your Skirmishes can target a character in 4 range instead of its normal targeting. Your Skirmishes Against targets in 2 range push the target 1 space away."
+    "text": "Your Skirmishes can Choose a target in 4 range instead of its normal targeting. Your Skirmishes Against targets in 2 range push the target 1 space away."
   },
   {
     "tech": "Breacher",
@@ -247,7 +247,7 @@
     "flavor": "\u201cI\u2019m pretty experienced myself y\u2019know, 15 years of BajiQuan, 11 years of Aikido, and a semester of Capoeira.Oh, sorry. We should be dueling about now! I\u2019ve got abad habit of bragging when I don\u2019t think I\u2019ll be seeingsomeone again.\u201d",
     "level": "1",
     "name": "Art Of The 8 Hammers",
-    "text": "You can\u2019t use any part of this Technique if you use Techniques with the \"weapon\" tag. After you Skirmish or Body / Talent Finisher, you can use one of the following follow ups on one of your targets. Each can be used once per Round.\n\u2023 Quick Step: Move up to 3 spaces. Gain [Tier] Evasion.\n\u2023 Binding Blow: Snare your target.\n\u2023 Rising Knee: Launch your target.\n\u2023 Iron Shoulder: Push your target 3 spaces."
+    "text": "You can\u2019t use any part of this Technique if you use Techniques with the \"weapon\" tag. After you Skirmish or Body / Talent Finisher, you can use one of the following \u2018follow ups\u2019 on one of your targets. Each can be used once per Round.\n\u2023 Quick Step: Move up to 3 spaces. Gain [Tier] Evasion.\n\u2023 Binding Blow: Snare your target.\n\u2023 Rising Knee: Launch your target.\n\u2023 Iron Shoulder: Push your target 3 spaces."
   },
   {
     "tech": "Martial Artist",
@@ -307,7 +307,7 @@
     "flavor": "\u201cI\u2019ll take all you bastards on! I\u2019ll flatten your wholedamned Pavilion! You\u2019ll rue the day you slighted me!And the record will be written in your scars!\u201d\u201cWell\u2026 if I still had my sword. Until then, a concussionand some splinters will do.\u201d",
     "level": "1",
     "name": "\u201cThis\u2019ll Do\u201d",
-    "text": "You can Interact to \u2018notice something\u2019, creating a piece of 10 Health Terrain in 5 range, or to remove adjacent Terrain to make a Swift Skirmish or Cast using any Attribute for its Roll."
+    "text": "You can Interact to \u2018notice something\u2019, creating an Obstacle in 5 range, or to remove adjacent Obstacle to make a Swift Skirmish or Cast using any Attribute for its Roll."
   },
   {
     "tech": "Improvisational Fighter",
@@ -327,7 +327,7 @@
     "flavor": "\u201cI\u2019ll take all you bastards on! I\u2019ll flatten your wholedamned Pavilion! You\u2019ll rue the day you slighted me!And the record will be written in your scars!\u201d\u201cWell\u2026 if I still had my sword. Until then, a concussionand some splinters will do.\u201d",
     "level": "3",
     "name": "Last Resort",
-    "text": "Once per scene, you may Attack using \u201cThis\u2019ll Do\u201d, even if there isn\u2019t Terrain to remove. This use gives the Attack from it [Tension] Advantage."
+    "text": "Once per scene, you may Attack using \u201cThis\u2019ll Do\u201d, even if there isn\u2019t an Obstacle to remove. This use gives the Attack from it [Tension] Advantage."
   },
   {
     "tech": "Warring Ascendant",
@@ -337,7 +337,7 @@
     "flavor": "\u201cMy dearest brother, born on the battlefield. I know youexpect more, but I implore you. Lend me your strength,and feel the air on your skin. I call upon you in my timeof greatest need, heed, o\u2019 Durandal!\u201d",
     "level": "1",
     "name": "Heavenly Arm",
-    "text": "Choose a Technique with the \u201cWeapon\u201d Tag. Once per Scene, After you Charge or Awaken this with at least 2 Tension, you may \u2018Transform\u2019, pushing all enemies within 2 range 3 spaces away. While Transformed you count as having all three Levels of the Technique you chose, if it has an alternate Foci, track it separately and use it as your Focus while Transformed. If you\u2019re reduced to 0 Health while Transformed, it ends, and you\u2019re Dazed."
+    "text": "Choose a Technique with the \u201cWeapon\u201d Tag. Once per Scene, After you Charge or Awaken this with at least 2 Tension, you may \u2018Transform\u2019, pushing all enemies within 2 range 3 spaces away and trigger any of its Deploy effects. While Transformed you count as having all three Levels of the Technique you chose, if it has an alternate Foci, track it separately and use it as your Focus while Transformed. If you\u2019re reduced to 0 Health while Transformed, it ends, and you\u2019re Dazed."
   },
   {
     "tech": "Warring Ascendant",
@@ -632,7 +632,7 @@
   {
     "tech": "Assassin",
     "archetype": "Vagabond",
-    "tags": "Attacks, Avoidance",
+    "tags": "Attacks, Movement, Avoidance",
     "stars": "\u2605",
     "flavor": "\u201cA bloodied coin spends just as well as any other.\u201d",
     "level": "1",
@@ -642,7 +642,7 @@
   {
     "tech": "Assassin",
     "archetype": "Vagabond",
-    "tags": "Attacks, Avoidance",
+    "tags": "Attacks, Movement, Avoidance",
     "stars": "\u2605",
     "flavor": "\u201cA bloodied coin spends just as well as any other.\u201d",
     "level": "2",
@@ -652,7 +652,7 @@
   {
     "tech": "Assassin",
     "archetype": "Vagabond",
-    "tags": "Attacks, Avoidance",
+    "tags": "Attacks, Movement, Avoidance",
     "stars": "\u2605",
     "flavor": "\u201cA bloodied coin spends just as well as any other.\u201d",
     "level": "3",
@@ -707,7 +707,7 @@
     "flavor": "\u201cObstacles are found everywhere. In overcoming them,we nourish ourselves.\u201d",
     "level": "2",
     "name": "Wall Jump",
-    "text": "After you end a Jump\u2019s movement adjacent to a piece of terrain or board edge, you may move an additional 3 spaces in a straight line and gain 1 Evasion. This additional movement is considered part of the Jump\u2019s total movement. You can only \u201cWall Jump\u201d once per Turn."
+    "text": "After you end a Jump\u2019s movement adjacent to an Obstacle or board edge, you may move an additional 3 spaces in a straight line and gain 1 Evasion. This additional movement is considered part of the Jump\u2019s total movement. You can only \u201cWall Jump\u201d once per Turn."
   },
   {
     "tech": "Acrobat",
@@ -717,7 +717,7 @@
     "flavor": "\u201cObstacles are found everywhere. In overcoming them,we nourish ourselves.\u201d",
     "level": "3",
     "name": "Weightless Body",
-    "text": "You may \u201cWall Jump\u201d any number of times in a Jump. You can't use the effect of \u201cWall Jump\u201d on the same terrain or board edge more than once per Jump."
+    "text": "You may \u201cWall Jump\u201d any number of times in a Jump. You can't use the effect of \u201cWall Jump\u201d on the same Obstacle or board edge more than once per Jump."
   },
   {
     "tech": "Blade Master",
@@ -937,7 +937,7 @@
     "flavor": "\u201cFloat like a butterfy\u2026\u201d l",
     "level": "1",
     "name": "Sting",
-    "text": "Once per Turn, if you\u2019ve moved with Stride on the same Turn, you may \u2018Jab\u2019 an adjacent character at no Cost. A Jab deals [Talent/2] damage to its target and counts as a Swift Skirmish; features other than this Technique cannot change a Jab\u2019s damage or targeting."
+    "text": "Once per Turn, if you\u2019ve moved with Stride on the same Turn, you may \u2018Jab\u2019 an adjacent target at no Cost. A Jab deals [Talent/2] damage to its target and counts as a Swift Skirmish; features other than this Technique cannot change a Jab\u2019s damage or targeting."
   },
   {
     "tech": "Skirmisher",
@@ -1307,7 +1307,7 @@
     "flavor": "\u201cMake way for Pantomime\u2019s blazing star!\u201d\u201cThe killer king with the inescapable pin!\u201d\u201cThe one, the only\u2026 Rapha\u00ebl Blas\u00e9!\u201d",
     "level": "2",
     "name": "Spine Breaker",
-    "text": "Your Skirmishes gain 1 Advantage. After you Spike a single Launched character, you may teleport to a space adjacent to your target and change the attack you are using into a Body Finisher at no Cost."
+    "text": "Your Skirmishes gain 1 Advantage. If you would Spike a single Launched character, you may teleport to a space adjacent to your target and change the attack you are using into a Body Finisher at no Cost."
   },
   {
     "tech": "Grappler",
@@ -1397,7 +1397,7 @@
     "flavor": "\u201cDon\u2019t worry, this happens to everyone your age.\u201d",
     "level": "2",
     "name": "Inheritance",
-    "text": "Choose one of the two NPCs you chose when gaining \u201cBeastly\u201d. You gain that NPC\u2019s Passive while Transformed. If the Passive triggers when the user is Knocked Out, it triggers after you end your Transformation instead."
+    "text": "Choose one of the two NPCs you chose when gaining \u201cBeastly\u201d. You gain that NPC\u2019s Passive while Transformed, and use their on Deploy effects when you Transform. If the Passive triggers when the user is Knocked Out, it triggers after you end your Transformation instead."
   },
   {
     "tech": "Beastial Ascendant",
@@ -1457,7 +1457,7 @@
     "flavor": "\u201cWoah. You\u2019re bigger in person. Like. Way bigger. Ohright, the armor, right away sir!\u201d",
     "level": "2",
     "name": "Immense",
-    "text": "Gain [Body] additional maximum Health. You may take up a 2x2 section of spaces rather than one space when you Deploy, if you do so you can freely move through 1x1 enemies and Terrain."
+    "text": "Gain [Body] additional maximum Health. You may take up a 2x2 section of spaces rather than one space when you Deploy, if you do so you can freely move through 1x1 enemies and Obstacles."
   },
   {
     "tech": "Giant Frame",
@@ -1537,7 +1537,7 @@
     "flavor": "His physique spoke to me.It said, \u201cGet the fuck out of my way.\u201d",
     "level": "1",
     "name": "Wild Charge",
-    "text": "Before you Jump, you may move [Body] spaces instead of [Talent], deal 30 damage to Terrain you move adjacent to, and move any number of characters you passed through or moved into adjacency with to a space adjacent to you."
+    "text": "Before you Jump, you may move [Body] spaces instead of [Talent], deal 30 damage to Obstacles you move adjacent to, and move any number of characters you passed through or moved into adjacency with to a space adjacent to you."
   },
   {
     "tech": "Juggernaut",
@@ -1557,7 +1557,7 @@
     "flavor": "His physique spoke to me.It said, \u201cGet the fuck out of my way.\u201d",
     "level": "3",
     "name": "\u201cEat Dirt!\u201d",
-    "text": "After you Launch an adjacent character without Attacking you may \u2018Throw\u2019 them, moving them 5 spaces in any direction. If they end their movement adjacent to another character or Terrain deal [Body] damage to both and remove Launched from them."
+    "text": "After you Launch an adjacent character without Attacking you may \u2018Throw\u2019 them, moving them 5 spaces in any direction. If they end their movement adjacent to another character or Obstacle deal [Body] damage to both and remove Launched from them."
   },
   {
     "tech": "Mollycoddler",
@@ -1657,7 +1657,7 @@
     "flavor": "\u201cRunic alignment complete. Aether levels nominal. Wegot this partner. For Oberooooon!\u201d",
     "level": "1",
     "name": "Rune Core Engine",
-    "text": "You enter all combat Scenes with a \u2018Suit\u2019 adjacent to you. This is a 2x2 piece of terrain with 15 Health and [Tier/2] Armor. By Interacting with it, you put the Suit on. This removes the Terrain, grants you [Tier/2] Armor, and makes your character 2x2 in size. You may use Interact again to leave the Suit, losing these benefits and placing the terrain adjacent to you in sufficient empty spaces."
+    "text": "You enter all combat Scenes with a \u2018Suit\u2019 adjacent to you. This is a 2x2 Obstacle with 15 Health and [Tier/2] Armor. By Interacting with it, you put the Suit on. This removes the Obstacle, grants you [Tier/2] Armor, and makes your character 2x2 in size. You may use Interact again to leave the Suit, losing these benefits and placing the Obstacle adjacent to you in sufficient empty spaces."
   },
   {
     "tech": "Mecha Pilot",
@@ -1667,7 +1667,7 @@
     "flavor": "\u201cRunic alignment complete. Aether levels nominal. Wegot this partner. For Oberooooon!\u201d",
     "level": "2",
     "name": "Autonomous",
-    "text": "The Suit is now a Summoned non- Modifier NPC of your choice with a Tier equal to yours, so long as you don\u2019t have it on. It is still 2x2 in size and counts as Terrain while it\u2019s not taking a Turn, (change its health to match the summon\u2019s health, removing the 15 terrain health). While your Summon takes its Turn, you may Skirmish a character adjacent to it (regardless of range) in place of one of its Attacks."
+    "text": "The Suit is now a Summoned non- Modifier NPC of your choice with a Tier equal to yours, so long as you don\u2019t have it on. It is still 2x2 in size and counts as an Obstacle while it\u2019s not taking a Turn, (change its health to match the summon\u2019s health, removing the 15 Obstacle health). While your Summon takes its Turn, you may Skirmish a character adjacent to it (regardless of range) in place of one of its Attacks."
   },
   {
     "tech": "Mecha Pilot",
@@ -1837,7 +1837,7 @@
     "flavor": "\u201cEye of newt and toe of frog, Wool of bat and tongue ofdog, Adder\u2019s fork and blind-worm\u2019s sting, Lizard\u2019s legand owlet\u2019s wing, For a charm of powerful trouble, Like ahell-broth boil and bubble.\u201d",
     "level": "1",
     "name": "Quick Mix",
-    "text": "After you Breathe, you can make one of the following \u2018Potions\u2019. You can Interact to use one of these Potions on yourself or a character within 4 range. 1: Pure Water: Remove any Effect(s) from the target. 2: Fury Vapors: Strengthen the target. 3: Growth Serum: Regenerate the target. 4: Adrenaline Stim: Hasten the target. 5: Stoneskin Balm: Reinforce the target. 6: Vilethorn Poison: Blight the target."
+    "text": "After you Breathe, you can make one of the following \u2018Potions\u2019. You can Interact to use one of these Potions on yourself or a character within 4 range. 1: Pure Water: Remove any Effect(s) from the target. 2: Fury Vapors: Strengthen the target. 3: Growth Serum: Begin Regenerating the target. 4: Adrenaline Stim: Hasten the target. 5: Stoneskin Balm: Reinforce the target. 6: Vilethorn Poison: Blight the target."
   },
   {
     "tech": "Alchemist",
@@ -2077,7 +2077,7 @@
     "flavor": "Every surface is covered in small, intricately detailedpapers. This sort of obsessive protection seemed silly toher, but when removing one of these seals resulted invoices echoing around the room, she reconsidered.",
     "level": "1",
     "name": "Sacred Seal",
-    "text": "If you Breathe, you may replace its effect with placing a \u2018Talisman\u2019 on an adjacent character or space. Spaces and characters with Talismans are always valid targets for your Casts, and after you Cast targeting them, you gain 1 Focus."
+    "text": "If you Breathe, you may replace its effect with placing a \u2018Talisman\u2019 on an adjacent target. Spaces and characters with Talismans are always valid targets for your Casts, and after you Cast targeting them, you gain 1 Focus."
   },
   {
     "tech": "Talisman Exorcist",
@@ -2287,7 +2287,7 @@
     "flavor": "\u201cNow there\u2019s a smell you can feel!\u201d",
     "level": "1",
     "name": "Sublimation",
-    "text": "Your Improvises have their Cost set to 1 and can create Terrain up to 4 spaces away. When resolving an action targeting a piece of Terrain, you may destroy it to create a 3\u00d73 Zone of \u2018Gas\u2019 centered on its space that disappears at the start of your next Turn. When an enemy enters Gas they are Weakened. Allies in the Gas gain 3 Evasion when they\u2019re targeted by attacks coming from outside the Gas."
+    "text": "Your Improvises have their Cost set to 1 and can create an Obstacle up to 4 spaces away. When resolving an action targeting an Obstacle, you may destroy it to create a 3\u00d73 Zone of \u2018Gas\u2019 centered on its space that disappears at the start of your next Turn. When an enemy enters Gas they are Weakened. Allies in the Gas gain 3 Evasion when they\u2019re targeted by attacks coming from outside the Gas."
   },
   {
     "tech": "Chemist",
@@ -2307,7 +2307,7 @@
     "flavor": "\u201cNow there\u2019s a smell you can feel!\u201d",
     "level": "3",
     "name": "Deposition",
-    "text": "After you create a Gas Zone, deal [Mind] damage to all enemies in the spaces it covers. After you Knock Out an enemy with \u201cExperimental Mixture\u201d create a 3x3 Gas Zone centered on them."
+    "text": "After you create a Gas Zone, deal [Mind] damage to all enemies in the spaces it covers. After you Knock Out an enemy with \u201cExperimental Mixture\u201d, create a 3x3 Gas Zone centered on them."
   },
   {
     "tech": "Constrictor",
@@ -2397,7 +2397,7 @@
     "flavor": "\u201cFor hundreds of years the idea of Keeping a \u2018light\u2019 or\u2018solar\u2019 Fairy was seen as a fruitless endeavor. Not onlywas it not fully known if they exist, all theories that spokeof them came to the conclusion that a Faerie of itsnature would far surpass the influence of any other kind.It\u2019s no wonder its first known keeper has performed sowell among his peers.\u201d",
     "level": "3",
     "name": "Falscher Stern",
-    "text": "Once per Scene after you charge with at least 2 Tension you may replace its effect with drawing a full 4 Segment \u2018Solar\u2019 Clock, and placing a \u2018Falscher Stern\u2019 marker within 4 range. At the start of your turn, if you have a Solar Clock, empty one segment and Swiftly Cast at no Cost, targeting all enemies in a 3x3 Zone centered on the Falscher Stern, if it was the last segment use a Spirit Finisher instead, removing the marker and the Clock."
+    "text": "Once per Scene after you charge with at least 2 Tension you may replace its effect with drawing a full 4 Segment \u2018Solar\u2019 Clock, and placing a \u2018Falscher Stern\u2019 marker within 4 range. At the end of your Turn, if you have a Solar Clock, empty one segment and Swiftly Cast at no Cost, targeting all enemies in a 3x3 Zone centered on the Falscher Stern, if it was the last segment use a Spirit Finisher instead, removing the marker and the Clock."
   },
   {
     "tech": "Autophage",
@@ -2407,7 +2407,7 @@
     "flavor": "\u201cThe Students of Mardrus were widely renowned in theirday, creating the doctoring profession as we know it.Shame their achievements are overshadowed by thehuman cost of their work.\u201d",
     "level": "1",
     "name": "Transfusion",
-    "text": "You no longer use Focus. If you would spend, or lose Focus, you use 2 Health per Focus instead, if you would gain Focus gain an equal amount of Health instead. After you Attack a character with two or more different Effects, you begin Regenerating."
+    "text": "You no longer use Focus. Any increases to your max Focus increase your max Health instead. If you would spend, or lose Focus, use 2 Health per Focus instead, if you would gain Focus gain an equal amount of Health instead, any of this healing that would be prevented reduces the Focus cost of your next Finisher by the same amount. After you Attack a character with two or more different Effects, begin Regenerating."
   },
   {
     "tech": "Autophage",
@@ -2427,7 +2427,7 @@
     "flavor": "\u201cThe Students of Mardrus were widely renowned in theirday, creating the doctoring profession as we know it.Shame their achievements are overshadowed by thehuman cost of their work.\u201d",
     "level": "3",
     "name": "Born Of Mutable Flesh",
-    "text": "Once per Scene, after you use a Spirit / Body Finisher you may trigger \u201cOverexert\u201d twice and change its targeting to all enemies with more Health than you."
+    "text": "Once per Scene, after you use a Spirit / Body Finisher you may trigger \u201cOverexert\u201d twice and change the Finisher\u2019s targeting to all enemies with more Health than you."
   },
   {
     "tech": "Earth Speaker",
@@ -2437,7 +2437,7 @@
     "flavor": "\u201cYou lost the moment you touched the ground.\u201d",
     "level": "1",
     "name": "Tectonic Shift",
-    "text": "After you move Terrain you didn\u2019t create or another character, you create a piece of Terrain with 10 Health and 0 Armor in the space it left."
+    "text": "After you move an Obstacle you didn\u2019t create or another character, you create an Obstacle with 10 Health and 0 Armor in the space it left."
   },
   {
     "tech": "Earth Speaker",
@@ -2447,7 +2447,7 @@
     "flavor": "\u201cYou lost the moment you touched the ground.\u201d",
     "level": "2",
     "name": "Earthen Shards",
-    "text": "After you destroy or move a piece of terrain, you may deal [Tier] damage to all enemies adjacent to its new position. Each enemy can only be damaged by this effect once per Turn."
+    "text": "After you destroy or move an Obstacle, you may deal [Tier] damage to all enemies adjacent to its new position. Each enemy can only be damaged by this effect once per Turn."
   },
   {
     "tech": "Earth Speaker",
@@ -2457,7 +2457,7 @@
     "flavor": "\u201cYou lost the moment you touched the ground.\u201d",
     "level": "3",
     "name": "Stone Soldiers",
-    "text": "After you Cast or use a Spirit Finisher, you may move a piece of terrain adjacent to you into a space adjacent to your target. Doing so gives the Attack 3 Advantage and destroys the terrain after the Attack resolves."
+    "text": "After you Cast or use a Spirit Finisher, you may move an Obstacle adjacent to you into a space adjacent to your target. Doing so gives the Attack 3 Advantage and destroys the Obstacle after the Attack resolves."
   },
   {
     "tech": "Siren",
@@ -2547,7 +2547,7 @@
     "flavor": "\u201cTrue freedom doesn\u2019t exist in this world. Even the windcannot blow on forever.\u201d",
     "level": "3",
     "name": "Mountain Carver",
-    "text": "\u201cGrowing Winds\u201d and \u201cUpdraft\u201d can now move Terrain as well as characters. If you move a piece of Terrain outside of a Typhoon you may have it continue its movement until it moves adjacent to a character, dealing [Tier] damage to that character. If a piece of Terrain is moved to the edge of the board through this feature, it is destroyed."
+    "text": "\u201cGrowing Winds\u201d and \u201cUpdraft\u201d can now move Obstacles as well as characters. If you move an Obstacle outside of a Typhoon you may have it continue its movement until it moves adjacent to a character, dealing [Tier] damage to that character. If an Obstacle is moved to the edge of the board through this feature, it is destroyed."
   },
   {
     "tech": "Hunter",
@@ -2557,7 +2557,7 @@
     "flavor": "\u201cJust\u2026 one\u2026 more\u2026 step\u2026\u201d",
     "level": "1",
     "name": "Steel Jaws",
-    "text": "Your Skirmishes that target one empty space are always Swift. After you target an empty space with a Skirmish or Mind Finisher, you may place a \u2018Small Trap\u2019 in that space, when an enemy moves over a Small Trap their movement is stopped and you may swiftly Skirmish them regardless of range at no Cost."
+    "text": "Your Skirmishes that target only empty spaces are always Swift. After you target only an empty space with a Skirmish or Mind Finisher, you may place a \u2018Small Trap\u2019 in that space, when an enemy moves over a Small Trap their movement is stopped, they\u2019re Slowed, and you may swiftly Skirmish them regardless of range at no Cost, doing this removes the Trap."
   },
   {
     "tech": "Hunter",
@@ -2597,7 +2597,7 @@
     "flavor": "The people of the Gardens knew well to put out theirofferings at solstice. For as the days grew long, theHarvesters of Krouses would make pilgrimage, seekinghomes lacking piety to become their bloody crop.",
     "level": "2",
     "name": "Tend",
-    "text": "Enemies in 3 range don't lose Marked when they end their turn."
+    "text": "Enemies in 3 range don't lose Marked when they\u2019re hit (they still only trigger once per Turn)."
   },
   {
     "tech": "Reaper",
@@ -2647,7 +2647,7 @@
     "flavor": "\u201cMom always said the best way to move people is withwords, but picking up that bus seemed much faster.\u201d",
     "level": "1",
     "name": "Strong-Arm",
-    "text": "If you Shove, you may move your target up to 5 spaces in a Line instead of 1 space, pushing any characters it would move through to the nearest possible unoccupied space. If you push them adjacent to an opponent you may Launch all characters involved. You may target Terrain with your Shoves."
+    "text": "If you Shove, you may move your target up to 5 spaces in a Line instead of 1 space, pushing any characters it would move through to the nearest possible unoccupied space. If you push them adjacent to an opponent you may Launch all characters involved. You may target Obstacles with your Shoves."
   },
   {
     "tech": "Inhuman Strength",
@@ -2667,7 +2667,7 @@
     "flavor": "\u201cMom always said the best way to move people is withwords, but picking up that bus seemed much faster.\u201d",
     "level": "3",
     "name": "Smash Through",
-    "text": "After you move a character into adjacency with a piece of Terrain, both take [Body] damage. If the Terrain is destroyed, the character is pushed for another 3 spaces. This additional movement can only be triggered once per move."
+    "text": "After you move a character into adjacency with an Obstacle, both take [Body] damage. If the Obstacle is destroyed, the character is pushed for another 3 spaces. This additional movement can only be triggered once per move."
   },
   {
     "tech": "Swarm Body",
@@ -2677,7 +2677,7 @@
     "flavor": "\u201cI could see them wriggling under his coat, and the glarethrough his glasses didn\u2019t help me feel safer. They triedto explain the mission to me but I could barely payattention, there were times where\u2026 something crawledacross the ground out of sight and the conversationwould suddenly stop. It always seemed like it wasglaring at me, despite me not being able to see any of itseyes. I\u2019m getting shivers just thinking about it!\u201d",
     "level": "1",
     "name": "Fluttering Form",
-    "text": "After you end your turn or are targeted by an attack you may spend 1 Focus to release a \u201cSwarm\u201d in your or the attacker\u2019s space. Swarms are spaces of difficult terrain that only restrict enemies and deal [Tier] damage to enemies who enter them or start their Turn in them. After you start your Turn you may move each of your Swarms up to 3 spaces."
+    "text": "After you end your turn or are targeted by an attack you may spend 1 Focus to release a \u201cSwarm\u201d in your or the attacker\u2019s space. Swarms are a unique Field, they stop enemies who move into them like Difficult Terrain, deal [Tier] damage to enemies who move into or start their turn in the Field, and can be attacked and destroyed as if they were Obstacles with 1 Health. After you start your Turn you may move each of your Swarms up to 3 spaces."
   },
   {
     "tech": "Swarm Body",
@@ -2837,7 +2837,7 @@
     "flavor": "\u201cNo, No, NO! Try showing me up when reduced to ash!\u201d",
     "level": "2",
     "name": "Scorched Earth",
-    "text": "After you would deal damage to an empty space, you may turn it into Difficult Terrain. The first time enemies move into or start their Turn in Difficult Terrain you created each Turn, they receive [Tier] damage."
+    "text": "After you deal damage to an empty space, you may turn it into Difficult Terrain. The first time enemies move into or start their Turn in Difficult Terrain you created each Turn, they receive [Tier] damage."
   },
   {
     "tech": "Rapid-Fire Sorcery",
@@ -2927,7 +2927,7 @@
     "flavor": "\u201cMagic isn\u2019t a thing you own, you don\u2019t create it and youaren't its master. The magi borrow from somethinggreater than themselves, it's only natural that I return thefavor once in a while.\u201d",
     "level": "2",
     "name": "Unchain [ Charge \u2192 Interact]",
-    "text": "If Interact targets you, begin tracking \u2018Fury\u2019 a 6 Segment Clock, and fill one Segment for each adjacent enemy + [Tension]. If you have Fury Segments, you can only spend AP on Jumps & Finishers, and doing either empties one. In Fury, Jumps are Swift, and after you Jump Swiftly Cast at no Cost targeting ALL adjacent characters. When Fury empties, remove it, and you\u2019re Dazed."
+    "text": "If Interact targets you, begin tracking \u2018Fury\u2019 a 6 Segment Clock, and fill one Segment for each adjacent enemy + [Tension]. If you have Fury Segments, you can only spend AP on Jumps & Finishers, and doing either empties one. In Fury, Jumps are Swift, and after you Jump Swiftly Cast at no Cost targeting ALL adjacent targets. When Fury empties, remove it, and you\u2019re Dazed."
   },
   {
     "tech": "Feral Arcana",
@@ -3077,7 +3077,7 @@
     "flavor": "\u201cThis city is a heretical idol, incomplete, unstable, andfallen to vice. My men and I have tried to negotiate itssalvation, but these creatures seem unable to savethemselves. Be thankful we are so graceful.\u201d",
     "level": "2",
     "name": "One True World",
-    "text": "Your first Breath you use on your turn is Swift, your Charge has its cost reduced to 1. After you deal damage to or destroy terrain you gain a Creation Mark."
+    "text": "Your first Breath you use on your turn is Swift, your Charge has its cost reduced to 1. After you deal damage to or destroy an Obstacle you gain a Creation Mark."
   },
   {
     "tech": "Creation Ascetic",
@@ -3197,7 +3197,7 @@
     "flavor": "\u201cEach incantation is a flurry of frozen elegance,conjuring storms of ice and swirls of snow.\u201d",
     "level": "2",
     "name": "Icicle Halo",
-    "text": "Your Casts gain 1 Advantage. Begin tracking \u201cIcicle\u201d, a 4 Segment Clock that empties after each Scene. After you gain Focus, fill one Segment. Before you Breathe you may replace its effect with emptying the Clock and deal [Spirit/2] damage to a character within 5 range once for each Segment emptied. If this damage targets a Slow character, Immobilize them."
+    "text": "Your Casts gain 1 Advantage. Begin tracking \u201cIcicle\u201d, a 4 Segment Clock that empties after each Scene. Once per Action, after you gain Focus, fill one Segment. Before you Breathe you may replace its effect with emptying the Clock and deal [Spirit/2] damage to a character within 5 range once for each Segment emptied. If this damage targets a Slow character, Immobilize them."
   },
   {
     "tech": "Frost Veiler",
@@ -3297,7 +3297,7 @@
     "flavor": "\u201cThe brass has sullied all we hold sacred! The machineis in the garden, and nectar coats its teeth!\u201d",
     "level": "3",
     "name": "Never Meant To Be",
-    "text": "If you use a Spirit Finisher with a full Insight Clock, you may empty all the Segments to have it target two intersecting \u221e length lines anywhere on the board. All characters targeted are moved one space off of the line in a direction of your choice and the targeted spaces are removed from the game, destroying any Terrain on them or connected to them. If a character would enter one of these spaces, they are instead Teleported to the closest space on the opposite side of the Line."
+    "text": "If you use a Spirit Finisher with a full Insight Clock, you may empty all the Segments to have it target two intersecting \u221e length lines anywhere on the board. All characters targeted are moved one space off of the line in a direction of your choice and the targeted spaces are removed from the game, destroying any Obstacle on them or connected to them. If a character would enter one of these spaces, they are instead Teleported to the closest space on the opposite side of the Line."
   },
   {
     "tech": "Ego Arm",
@@ -3307,7 +3307,7 @@
     "flavor": "Two minds as one, united in a pursuit of glory.",
     "level": "1",
     "name": "I Am Your Sword",
-    "text": "After Deploying or Breathing adjacent to a willing ally you may \u2018Transform\u2019, making them your \u2018Wielder\u2019. While Transformed you take up the same space as your Wielder, can't be targeted, can\u2019t move, can use their attributes when you need to roll one of yours, and if your Wielder takes a Wound you do the same. Either of you can split at the start of your Turns, placing you in an unoccupied adjacent space."
+    "text": "After Deploying or Breathing adjacent to a willing ally you may \u2018Transform\u2019, making them your \u2018Wielder\u2019. While Transformed you take up your Wielder\u2019s space, you can use their attributes for rolls, other characters can\u2019t willingly target or damage you, and you can\u2019t move. If your Wielder takes a Wound you do too. Either of you can split at the start of your Turns, placing you in an unoccupied adjacent space."
   },
   {
     "tech": "Ego Arm",
