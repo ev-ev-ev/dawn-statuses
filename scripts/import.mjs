@@ -5,7 +5,36 @@ import { edges } from "./npcs/edges.mjs";
 import { npcTechniques } from "./npcs/techniques.mjs"
 import { refresh } from "./refresh.mjs";
 
-async function restoreTemplates(things, type, database, folder) {
+function isObject(x) {
+    return  x !== null && typeof x === 'object' && !Array.isArray(x)
+}
+
+function replaceOldIDs(thing, templateIDMap) {
+    if (isObject(thing)) {
+        for (let prop in thing) {
+            // we don't want to touch inherited stuff
+            if (thing.hasOwnProperty(prop)) {
+                thing[prop] = replaceOldIDs(thing[prop], templateIDMap);
+            }
+        }
+    }
+
+    // This could _probably_ be done as above, not sure
+    if (Array.isArray(thing)) {
+        return thing.map(x => replaceOldIDs(x, templateIDMap));
+    }
+
+    // primitives
+    if (typeof thing === 'string') {
+        if (templateIDMap.hasOwnProperty(thing)) {
+            return templateIDMap[thing];
+        }
+    }
+
+    return thing;
+}
+
+async function restoreTemplates(things, type, database, folder, templateIDMap = {}) {
     let thingsInDatabase = {};
 
     for(let thing of database) {
@@ -13,6 +42,7 @@ async function restoreTemplates(things, type, database, folder) {
     }
 
     for(let thing of things) {
+        let oldThingID = thing.id;
         let thingName = thing.name;
         let thingSystem = thing.data;
 
@@ -24,8 +54,10 @@ async function restoreTemplates(things, type, database, folder) {
             thingInDatabase = await type.create(thing);
         }
 
-        await thingInDatabase.update({folder: folder.id, system: thingSystem});
+        await thingInDatabase.update({folder: folder.id, system: replaceOldIDs(thingSystem, templateIDMap)});
+        templateIDMap[oldThingID] = thingInDatabase.id;
     }
+    return templateIDMap
 }
 
 async function folder(name, type, parentFolderId=null) {
@@ -47,8 +79,8 @@ async function folder(name, type, parentFolderId=null) {
 }
 
 async function restore() {
-    await restoreTemplates(templates.items, Item, game.items, await folder("Templates", "Item"));
-    await restoreTemplates(templates.actors, Actor, game.actors, await folder("Templates", "Actor"));
+    let templateIDMap = await restoreTemplates(templates.items, Item, game.items, await folder("Templates", "Item"));
+    await restoreTemplates(templates.actors, Actor, game.actors, await folder("Templates", "Actor"), templateIDMap);
     await restoreTechniques();
     await restoreComponents();
     await restoreEdges();
