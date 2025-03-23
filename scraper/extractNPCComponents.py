@@ -106,8 +106,11 @@ def extract(sourcebook, archetype, startpage, endpage):
             currenttype = 'attack'
             continue
 
-        m = re.search(r"^\*\*\*?\[Ace:T(\d+)\] ([^:]+): (.*)\*\*$", line)
+        # There's a LOT of broken formatting around aces.
+        m = re.search(r"\[Ace:T(\d+|X)\]", line)
         if m:
+            # We're deleting strings of 2 or more asterisks, those are from formatting... I think.
+            m = re.search(r"^\[Ace:T(\d+|X)\] ([^:]+): (.*)$", re.sub(r"\*\*+", "", line))
             current['acetension'] = m.group(1)
             current['acename'] = m.group(2)
             current['ace'] = m.group(3)

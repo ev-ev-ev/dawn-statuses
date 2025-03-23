@@ -571,13 +571,13 @@
     "actionname": "Caress",
     "action": "Target any character, Teleport them to the designated space, or Teleport a character in the designated space to another space.",
     "attackname": "Destroy The Interloper",
-    "attack": "Choose a target in the designated space. Roll 5 + [Tier].\nReward: Deal [Hits] + [Tension] damage, Banish them, and move them up to 4 spaces. **[Ace:T3]** **Mother Of The Void: For the rest of this Scene** this can designate 2 spaces with its passive. This NPC immediately takes another Turn.",
+    "attack": "Choose a target in the designated space. Roll 5 + [Tier].\nReward: Deal [Hits] + [Tension] damage, Banish them, and move them up to 4 spaces.",
     "attackdice": "5",
     "attacktierdice": "1",
     "attacktensionx": "1",
-    "acename": "",
-    "acetension": "",
-    "ace": ""
+    "acename": "Mother Of The Void",
+    "acetension": "3",
+    "ace": "For the rest of this Scene this can designate 2 spaces with its passive. This NPC immediately takes another Turn."
   },
   {
     "name": "Martyr",
@@ -731,13 +731,13 @@
     "actionname": "Aim",
     "action": "This NPC Strengthens and Steadies itself.",
     "attackname": "Load",
-    "attack": "Fill the Preparation by 1 Segment, 2 if this didn\u2019t move this turn. ***[Ace:TX] Fire: Use this Ace when this begins their Turn** with a full Preparation Clock. Empty the Preparation Clock and Choose a target in 10 spaces. Roll 5 + [Tier].\nReward: Deal [Hits] + [Tension] damage three times.",
-    "attackdice": "5",
+    "attack": "Fill the Preparation by 1 Segment, 2 if this didn\u2019t move this turn.",
+    "attackdice": "",
     "attacktierdice": "1",
     "attacktensionx": "1",
-    "acename": "",
-    "acetension": "",
-    "ace": ""
+    "acename": "Fire",
+    "acetension": "X",
+    "ace": "Use this Ace when this begins their Turn with a full Preparation Clock. Empty the Preparation Clock and Choose a target in 10 spaces. Roll 5 + [Tier].\nReward: Deal [Hits] + [Tension] damage three times."
   },
   {
     "name": "Enchanter",
